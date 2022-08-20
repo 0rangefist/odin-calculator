@@ -12,4 +12,14 @@ body {
     #feb800 42%,
     #feb800 100%
   );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background-color: #313131;
+  height: 440px;
+  width: 280px;
+  border-radius: 12px;
 }
