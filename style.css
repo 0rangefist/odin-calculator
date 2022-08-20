@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-size: 18px;
 }
 
 *,
@@ -27,7 +28,7 @@ body {
   height: 440px;
   width: 280px;
   border-radius: 12px;
-  box-shadow: #00000026 0px 15px 25px,#0000000d 0px 5px 10px;
+  box-shadow: #00000026 0px 15px 25px, #0000000d 0px 5px 10px;
 }
 
 .screen {
@@ -45,17 +46,43 @@ body {
 
 .row {
   display: flex;
-  height: 16%;
-  padding: 25px 45px 10px 45px;
+  height: 16.5%;
+  padding: 20px 39px 15px 39px;
   justify-content: space-between;
-  gap: 10px;
+  gap: 1px;
 }
 
 .row.last {
   justify-content: flex-end;
 }
 
+button.operators{
+  color: #feb800;
+  /* font-weight: bold; */
+}
+
+button.operators.larger{
+  font-size: 1.25rem;
+  
+}
+
 button {
-  width: 40px;
-  height: 40px;
+  font-family: 'Albert Sans', serif;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 50px;
+  transition: .3s ease-in-out;
+}
+
+button:hover{
+  background-color: #474747;
+  transition: .1s ease-in-out;
+}
+
+button:active{
+  transform: scale(0.93);
+  transition: .15s ease-out;
 }

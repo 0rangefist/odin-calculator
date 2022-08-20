@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Oxygen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <script src="./app.js" defer></script>
     <title>Calculator</title>
@@ -16,30 +26,30 @@
           <button>C</button>
           <button>+/-</button>
           <button>%</button>
-          <button>/</button>
+          <button class="operators">/</button>
         </div>
         <div class="row">
           <button>7</button>
           <button>8</button>
           <button>9</button>
-          <button>X</button>
+          <button class="operators">X</button>
         </div>
         <div class="row">
           <button>4</button>
           <button>5</button>
           <button>6</button>
-          <button>-</button>
+          <button class="operators larger">-</button>
         </div>
         <div class="row">
           <button>1</button>
           <button>2</button>
           <button>3</button>
-          <button>+</button>
+          <button class="operators larger">+</button>
         </div>
         <div class="row last">
           <button>0</button>
           <button>.</button>
-          <button>=</button>
+          <button class="operators larger">=</button>
         </div>
       </div>
     </div>
