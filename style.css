@@ -23,3 +23,14 @@ body {
   width: 280px;
   border-radius: 12px;
 }
+
+.screen{
+  height: 30%;
+  border-bottom: #feb800 solid 2px;
+}
+
+.num-pad{
+  height: 70%;
+  /* background-color: aliceblue;
+  border-radius: 0 0 12px 12px; */
+}
