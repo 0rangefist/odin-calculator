@@ -1,6 +1,16 @@
+:root {
+  --primary-bg-color: #fe9800;
+  --secondary-bg-color: #212327;
+  --border-radius: 12px;
+  /* --primary-bg-color: #e1e8f8;
+  --secondary-bg-color: #feb800; */
+}
+
 html {
   box-sizing: border-box;
   font-size: 18px;
+  font-family: 'Albert Sans', serif;
+  color: white;
 }
 
 *,
@@ -13,10 +23,10 @@ body {
   height: 100vh;
   background: linear-gradient(
     to bottom,
-    #e1e8f8 0%,
-    #e1e8f8 42%,
-    #feb800 42%,
-    #feb800 100%
+    var(--primary-bg-color) 0%,
+    var(--primary-bg-color) 42%,
+    var(--secondary-bg-color) 42%,
+    var(--secondary-bg-color) 100%
   );
   display: flex;
   justify-content: center;
@@ -27,19 +37,32 @@ body {
   background-color: #313131;
   height: 440px;
   width: 280px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   box-shadow: #00000026 0px 15px 25px, #0000000d 0px 5px 10px;
+  transform: scale(1.25);
 }
 
 .screen {
   height: 30%;
-  border-bottom: #feb800 solid 2px;
+  border-bottom: #feb800 solid 1px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #474747;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.screen h1 {
+  
+  margin: 20px 39px 20px 39px;
+  font-weight: 400;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
 
 .num-pad {
   height: 70%;
-  /* background-color: aliceblue;
-  border-radius: 0 0 12px 12px; */
   display: flex;
   flex-direction: column;
 }
@@ -56,14 +79,16 @@ body {
   justify-content: flex-end;
 }
 
-button.operators{
+button.operators {
   color: #feb800;
-  /* font-weight: bold; */
 }
 
-button.operators.larger{
+button.larger {
   font-size: 1.25rem;
-  
+}
+
+button.smaller {
+  font-size: 0.8rem;
 }
 
 button {
@@ -74,15 +99,23 @@ button {
   border: none;
   width: 50px;
   height: 50px;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-button:hover{
+button:hover {
   background-color: #474747;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
-button:active{
+button:active {
   transform: scale(0.93);
-  transition: .15s ease-out;
+  transition: 0.15s ease-out;
+}
+
+@media only screen and (max-width: 359px) {
+  .calculator {
+    transform: scale(1);
+  }
 }
