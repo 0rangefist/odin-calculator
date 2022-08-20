@@ -1,6 +1,11 @@
-* {
-  margin: o;
-  padding: 0;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -22,15 +27,35 @@ body {
   height: 440px;
   width: 280px;
   border-radius: 12px;
+  box-shadow: #00000026 0px 15px 25px,#0000000d 0px 5px 10px;
 }
 
-.screen{
+.screen {
   height: 30%;
   border-bottom: #feb800 solid 2px;
 }
 
-.num-pad{
+.num-pad {
   height: 70%;
   /* background-color: aliceblue;
   border-radius: 0 0 12px 12px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  height: 16%;
+  padding: 25px 45px 10px 45px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.row.last {
+  justify-content: flex-end;
+}
+
+button {
+  width: 40px;
+  height: 40px;
 }
