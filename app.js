@@ -64,6 +64,15 @@ const compute = function (storedOperator, storedValue, screenValue) {
   }
 };
 
+const resetCalculator = function () {
+  //clear screen & reset to defaults
+  clearScreen();
+  printValToScreen(0);
+  storedOperator = '';
+  storedValue = '';
+  isDoneTyping = true;
+};
+
 //Buttons
 let buttons = document.querySelectorAll('.row button');
 //Button click event listener
@@ -83,7 +92,7 @@ buttons.forEach((button) => {
       isDoneTyping = true;
       //   printValToScreen(storedOperator);
     } else if (currentInput == 'C') {
-      //clear
+      resetCalculator();
     } else if (currentInput == '⌫') {
       //backspace
     } else if (currentInput == '%') {
@@ -91,7 +100,6 @@ buttons.forEach((button) => {
     } else if (currentInput == '.') {
       //decimal point
     } else if (currentInput == '=') {
-      //equals
       let result = compute(storedOperator, storedValue, getValFromScreen());
       printValToScreen(result);
       storedOperator = '';
