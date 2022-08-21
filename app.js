@@ -99,7 +99,22 @@ buttons.forEach((button) => {
       printValToScreen(getValFromScreen() / 100);
       isDoneTyping = true;
     } else if (currentInput == '.') {
-      //decimal point
+      //if screen value is a float & the user is not done typing, 
+      //do nothing when this period(.) button is pressed
+      if (/\./.test(getValFromScreen() && !isDoneTyping)) {
+        //button press does nothing
+      } else {
+        if (isDoneTyping) {
+          clearScreen();
+          isDoneTyping = false;
+        }
+        printValToScreen(`${getValFromScreen()}${currentInput}`);
+
+        //check if screen value has no preceeding 0 and add it
+        if((/^\.$/).test(getValFromScreen())){
+          printValToScreen('0' + getValFromScreen());
+        }
+      }
     } else if (currentInput == '=') {
       let result = compute(storedOperator, storedValue, getValFromScreen());
       printValToScreen(result);
