@@ -1,7 +1,7 @@
 //Global variables
 let storedOperator = '';
 let storedValue = '';
-let isDoneTyping = false;
+let isDoneTyping = true;
 let screen = document.querySelector('.screen h1');
 
 let add = function (num1, num2) {
