@@ -73,6 +73,10 @@ const resetCalculator = function () {
   isDoneTyping = true;
 };
 
+const deleteLastCharacter = function (text) {
+  return text.slice(0, -1);
+};
+
 //Buttons
 let buttons = document.querySelectorAll('.row button');
 //Button click event listener
@@ -94,12 +98,21 @@ buttons.forEach((button) => {
     } else if (currentInput == 'C') {
       resetCalculator();
     } else if (currentInput == '⌫') {
-      //backspace
+      //if screen value is a single digit,
+      //display 0 after deleting
+      if (/^\d$/.test(getValFromScreen())) {
+        printValToScreen(0);
+        isDoneTyping = true;
+      } else {
+        let result = deleteLastCharacter(getValFromScreen());
+        printValToScreen(result);
+        isDoneTyping = false;
+      }
     } else if (currentInput == '%') {
       printValToScreen(getValFromScreen() / 100);
       isDoneTyping = true;
     } else if (currentInput == '.') {
-      //if screen value is a float & the user is not done typing, 
+      //if screen value is a float & the user is not done typing,
       //do nothing when this period(.) button is pressed
       if (/\./.test(getValFromScreen() && !isDoneTyping)) {
         //button press does nothing
@@ -111,7 +124,7 @@ buttons.forEach((button) => {
         printValToScreen(`${getValFromScreen()}${currentInput}`);
 
         //check if screen value has no preceeding 0 and add it
-        if((/^\.$/).test(getValFromScreen())){
+        if (/^\.$/.test(getValFromScreen())) {
           printValToScreen('0' + getValFromScreen());
         }
       }
