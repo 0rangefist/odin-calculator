@@ -38,10 +38,10 @@ let operate = function (operator, num1, num2) {
 };
 
 let printValToScreen = function (val) {
-  //animate
   screen.classList.remove('visible');
   screen.textContent = val;
 
+  //slight (1ms) delay to enable css transition to work
   setTimeout(function () {
     screen.classList.add('visible');
   }, 1);
@@ -51,8 +51,8 @@ let getValFromScreen = function () {
   return screen.textContent;
 };
 
-let clearValFromScreen = function () {
-  screen.textContent = '';
+let clearScreen = function () {
+  printValToScreen('');
 };
 
 const compute = function (storedOperator, storedValue, screenValue) {
@@ -98,7 +98,7 @@ buttons.forEach((button) => {
       isDoneTyping = true;
     } else {
       if (isDoneTyping) {
-        clearValFromScreen();
+        clearScreen();
         printValToScreen(`${getValFromScreen()}${currentInput}`);
         isDoneTyping = false;
       } else {
