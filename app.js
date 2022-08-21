@@ -99,11 +99,9 @@ buttons.forEach((button) => {
     } else {
       if (isDoneTyping) {
         clearScreen();
-        printValToScreen(`${getValFromScreen()}${currentInput}`);
         isDoneTyping = false;
-      } else {
-        printValToScreen(`${getValFromScreen()}${currentInput}`);
       }
+      printValToScreen(`${getValFromScreen()}${currentInput}`);
     }
   });
 });
