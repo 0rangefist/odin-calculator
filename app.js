@@ -96,9 +96,7 @@ buttons.forEach((button) => {
     } else if (currentInput == '⌫') {
       //backspace
     } else if (currentInput == '%') {
-      //percentage
       printValToScreen(getValFromScreen() / 100);
-      storedOperator = '';
       isDoneTyping = true;
     } else if (currentInput == '.') {
       //decimal point
