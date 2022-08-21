@@ -29,4 +29,9 @@ let operate = function (operator, num1, num2) {
   }
 };
 
-// console.log(operate('/', 10, 2));
+let printToScreen = function (val) {
+    let screen = document.querySelector('.screen h1');
+    screen.textContent = val;
+}
+
+// printToScreen(123.5);
