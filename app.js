@@ -6,8 +6,10 @@ let subtract = function (num1, num2) {
   return num1 - num2;
 };
 
-let multiply = function () {};
+let multiply = function (num1, num2) {
+    return num1 * num2;
+};
 
 let divide = function () {};
 
-// console.log(subtract(5, 2));
+// console.log(multiply(-5, 2));
