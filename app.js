@@ -60,7 +60,8 @@ const compute = function (storedOperator, storedValue, screenValue) {
     return screenValue;
   } else {
     let output = operate(storedOperator, storedValue, screenValue);
-    return output;
+    output = parseFloat(output);
+    return +output.toFixed(3);
   }
 };
 
