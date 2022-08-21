@@ -55,6 +55,18 @@ let clearValFromScreen = function () {
   screen.textContent = '';
 };
 
+let computeResult = function (storedOperator, storedValue, screenValue) {
+  if (storedOperator == '') {
+    printValToScreen(screenValue);
+    isDoneTyping = true;
+  } else {
+    let output = operate(storedOperator, storedValue, screenValue);
+    printValToScreen(output);
+    storedOperator = '';
+    isDoneTyping = true;
+  }
+};
+
 //Buttons
 let buttons = document.querySelectorAll('.row button');
 //Button click event listener
@@ -81,15 +93,7 @@ buttons.forEach((button) => {
       //decimal point
     } else if (currentInput == '=') {
       //equals
-      if (storedOperator == '') {
-        printValToScreen(getValFromScreen());
-        isDoneTyping = true;
-      } else {
-        let output = operate(storedOperator, storedValue, getValFromScreen());
-        printValToScreen(output);
-        storedOperator = '';
-        isDoneTyping = true;
-      }
+      computeResult(storedOperator, storedValue, getValFromScreen());
     } else {
       if (isDoneTyping) {
         clearValFromScreen();
