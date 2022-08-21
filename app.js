@@ -55,12 +55,12 @@ let clearValFromScreen = function () {
   screen.textContent = '';
 };
 
-const computeOutput = function (storedOperator, storedValue, screenValue) {
+const compute = function (storedOperator, storedValue, screenValue) {
   if (storedOperator == '') {
-    printValToScreen(screenValue);
+    return screenValue;
   } else {
     let output = operate(storedOperator, storedValue, screenValue);
-    printValToScreen(output);
+    return output;
   }
 };
 
@@ -76,7 +76,8 @@ buttons.forEach((button) => {
       currentInput == 'X' ||
       currentInput == '/'
     ) {
-      computeOutput(storedOperator, storedValue, getValFromScreen());
+      let result = compute(storedOperator, storedValue, getValFromScreen());
+      printValToScreen(result);
       storedValue = getValFromScreen();
       storedOperator = currentInput;
       isDoneTyping = true;
@@ -91,7 +92,8 @@ buttons.forEach((button) => {
       //decimal point
     } else if (currentInput == '=') {
       //equals
-      computeOutput(storedOperator, storedValue, getValFromScreen());
+      let result = compute(storedOperator, storedValue, getValFromScreen());
+      printValToScreen(result);
       storedOperator = '';
       isDoneTyping = true;
     } else {
