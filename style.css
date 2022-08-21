@@ -52,13 +52,15 @@ body {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-.screen h1 {
+h1 {
   
   margin: 20px 39px 20px 39px;
   font-weight: 400;
   -webkit-user-select: none;
   user-select: none;
   overflow: hidden;
+  /* transition: 1s ease-in-out; */
+  opacity: 0;
 }
 
 .num-pad {
@@ -118,4 +120,9 @@ button:active {
   .calculator {
     transform: scale(1);
   }
+}
+
+.visible{
+  opacity: 1;
+  transition: .25s ease-out;
 }
